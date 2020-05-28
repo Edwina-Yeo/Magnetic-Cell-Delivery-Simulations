@@ -42,13 +42,6 @@ kkk.FontSize=F;
 xticks.Fontsize=F
 axes1.TickLabelInterpreter = 'latex';
 ax = gca;
-% left = outerpos(1) + ti(1)+0.1;
-% bottom = outerpos(2) + ti(2)-0.02;
-% ax_width = outerpos(3) - ti(1) - ti(3);
-% ax_height = outerpos(4) -ti(2) - ti(4)-0.3;
-% % set(gcf,'Position',[150 220 600 600])
-% ax.Position = [left bottom ax_width ax_height];
-% axis(axes1,'tight');
 fig = gcf;
 
 

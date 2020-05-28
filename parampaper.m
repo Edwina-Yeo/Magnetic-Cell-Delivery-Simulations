@@ -1,5 +1,8 @@
 %% Parameters for Simulations 
-% Updated 19/03 
+
+% Author: Edwina Yeo 
+% Contact: yeo@maths.ox.ac.uk 
+% Updated 28/05/20
 clear all
 %% In vitro Values
 d=(1.65e-3)/2 %sze of in vitro channel
@@ -11,7 +14,7 @@ kb=1.38e-28 % Botlzmans costnat
 T=295 %(Room temp)
 muwater=8.9e-4 %(Batchelor)
 r=1e-5 %Cell radius (diameter =20micron)
-umax=0.0078 % 1ml/min in channel radius^
+umax=0.0078 % 1ml/min in channel radius^d
 dmu=1650 %diamter of pipe in microns
 
 %Pries viscosity fitting for in vitro channel

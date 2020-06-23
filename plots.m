@@ -152,11 +152,11 @@ figure1 = figure;
 
 axes1 = axes('Parent',figure1);
 set(gca,'linestyleorder',{'-',':','-.','--'}, 'colororder',[0,0,0],'nextplot','add')
-N=length(gamma)/4
-for i=1:4
+N=length(gamma)/3
+for i=1:3
   plot(gamma(N*(i-1)+1:i*N,1)*d*100,gamma(N*(i-1)+1:i*N,2)*100/2,'linewidth',1); hold on
 end
-k=legend({'$\gamma=0$','$\gamma=0.1\gamma^*$',' $\gamma=0.4\gamma^*$', '$\gamma=0.8\gamma^*$'},'Interpreter','latex')
+k=legend({'$\gamma=0$','$\gamma=0.05\gamma^*$',' $\gamma=0.1\gamma^*$'},'Interpreter','latex','Location','northwest')
 
 ylabel('Channel Blockage Percentage (\%)','Interpreter','latex');
 xlabel('$x$ (cm)','Interpreter','latex');
@@ -179,7 +179,7 @@ fig = gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 5 5];
 % 
-% print(fig,'gamma','-depsc')
+print(fig,'gamma','-depsc')
 % 
 % savefig('gamma.fig')
 end

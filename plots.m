@@ -351,7 +351,7 @@ end
 %% 2D plot comparion: constant extravasation: HEAT
 close all
 for i=1
-const=importdata('Data/constantextravasation.txt');
+const=importdata('Data/constextravasation.txt');
 k1=find(const(:,1)==-20.0);
 Ls=abs(k1(1:end-1)-k1(2:end));
 ts=0:139;
@@ -473,7 +473,7 @@ hold(axes2,'on');
 s=trisurf(DT(IO, :),x*d*100,y*d*100,z)
  s.EdgeColor='none'
  xlim([-1.5,0.5])
-ylim([-0.082,0.082])
+ylim([-0.0825,0.0825])
 % Create quiver3
 quiver3(q2(:,1)*d*100,q2(:,2)*d*100,10*ones(1,length(q2))',q2(:,3),q2(:,4),zeros(1,length(q2))',0.3,'white')
 
@@ -565,11 +565,11 @@ annotation(figure1,'textbox',...
     'FitBoxToText','off',...
     'EdgeColor','none');
 end
-%% % Appendix plot 1: mesh convergence study
+%% % Appendix plot: mesh convergence study 3
 % plots the number of mesh elements against the infinity norm of
 % the difference of the solution to the finest case
 
-% gamma=0,kappa=0
+% gamma=0.1,kappa=0.1
 for i=1
 figure1 = figure;
 error=importdata('Data/Error-case1.txt');
@@ -581,8 +581,10 @@ plot(numelem,percenterror,'-*')
 legend('c','p','u','v','h')
 ylabel('Maximum relative error (\% of solution)' ,'Interpreter','latex','FontSize',16)
 xlabel( 'Number of elements of mesh $n$','Interpreter','latex','FontSize',16)
+ print('Data/appendix-meshconvergence3','-depsc')
+
 end
-%% % Appendix plot 2: mesh convergence study2
+%% % Appendix plot: mesh convergence study 4
 % plots the number of mesh elements against the infinity norm of
 % the difference of the solution to the finest case
 % Gamma=0.5
@@ -598,12 +600,14 @@ plot(numelem,percenterror,'-*')
 legend('c','p','u','v','h')
 ylabel('Maximum relative error (\% of solution)' ,'Interpreter','latex','FontSize',16)
 xlabel( 'Number of elements of mesh $n$','Interpreter','latex','FontSize',16)
+ print('Data/appendix-meshconvergence4','-depsc')
+
 end
-%% % Appendix plot 2: mesh convergence study3
+%% % Appendix plot: mesh convergence study 2
 % plots the number of mesh elements against the infinity norm of
 % the difference of the solution to the finest case
-% Gamma=0.5
-% kappa=0.1
+% Gamma=0.1
+% kappa=0
 for i=1
 figure1 = figure;
 error=importdata('Data/Error-case3.txt');
@@ -615,13 +619,15 @@ plot(numelem,percenterror,'-*')
 legend('c','p','u','v','h')
 ylabel('Maximum relative error (\% of solution)' ,'Interpreter','latex','FontSize',16)
 xlabel( 'Number of elements of mesh $n$','Interpreter','latex','FontSize',16)
+ print('Data/appendix-meshconvergence2','-depsc')
+
 end
 
-%% % Appendix plot 2: mesh convergence study4
+%% % Appendix plot 2: mesh convergence study 1
 % plots the number of mesh elements against the infinity norm of
 % the difference of the solution to the finest case
-% Gamma=0.5
-% kappa=0.1
+% Gamma=0
+% kappa=0
 for i=1
 figure1 = figure;
 error=importdata('Data/Error-case4.txt');		
@@ -634,6 +640,8 @@ legend('c','p','u','v','h');
 
 ylabel('Maximum relative error (\% of solution)' ,'Interpreter','latex','FontSize',16)
 xlabel( 'Number of elements of mesh $n$','Interpreter','latex','FontSize',16)
+ print('Data/appendix-meshconvergence1','-depsc')
+
 end
 
 %Extraction and plotting function for heatmaps of concentration:

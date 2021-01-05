@@ -1,15 +1,17 @@
 # Magnetic-Cell-Delivery-Simulations
-Supplementary material for paper: Modelling and prediction of systemic delivery of SPION labelled Mesenchymal stromal cells by mathematical and experimental methods (2020)
+Supplementary material for paper: Experimental and mathematical modelling of magnetically labelled mesenchymal stromal cell delivery (2020) Author: E. Yeo, H. Markides, A.T. Schade, A.J. Studd, J.M. Oliver, S.L. Waters, A.J. El Haj
+Author of files in this repository: E. Yeo
 
 Contents:
 
 COMSOL files (requires COMSOL lisence along with 'Laminar Flow','Moving Mesh' packages)
 1) main.mph  
-2) Numerical-convergence-tests.mph
+2) Numerical_tests.mph
 
 MATLAB Files for figure production (requires MATLAB lisence)
-3) parampaper.m
-4) figurespaper.m
+3) param.m
+4) plots.m
+5) Data
 
 Raw Data exported from COMSOL
 
@@ -23,6 +25,7 @@ Results sensitivity to the approximate parameter 'delta' is tested.
 
 3) Contains parameters used to create dimensional plots. These parameters are in the appendix of the paper.
 
-4) Figure production for paper. Imports text files and uses parameters from parampaper.m. Each figure is produced by excecuting a section of code.
+4) Figure production for paper. Imports text files and uses parameters from param.m. Each figure is produced by excecuting a section of code.
 
+5) Contains the data exported from COMSOL required to run 4). 
 

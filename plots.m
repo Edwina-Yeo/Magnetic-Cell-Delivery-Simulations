@@ -56,8 +56,7 @@ bottom = outerpos(2) + ti(2);
 ax_width = outerpos(3) - ti(1) - ti(3);
 ax_height = outerpos(4) - ti(2) - ti(4);
 ax.Position = [left bottom ax_width ax_height];
-% print('magnet','-depsc')
-% savefig('magnet.fig')
+print('Data/intro-magneticfield','-depsc')
 end
 
 %% Preliminary Plot 2: Viscosity Fitting
@@ -71,7 +70,6 @@ mu=@(H) muwater * (1 + (eta45- 1) .* ((1 - H).^ c45- 1) / ((1 - 0.45) ^ c45 - 1)
 hold(axes1,'on');
 H = linspace(0,0.5,100);
 plot(H,mu(H),'k'); hold on % multiply force by 1e12 to plot in pN
-% k=legend({'Magnetic force in x','Magnetic force in y'},'Interpreter','latex')
 kk=ylabel('Effective Viscosity (Pa s)','Interpreter','latex')
 kkk=xlabel('Haematocrit $H$ ','Interpreter','latex')
    
@@ -82,8 +80,6 @@ axes1.TickLabelInterpreter = 'latex';
 ax=gca
 outerpos = ax.OuterPosition;
 ti = ax.TightInset; 
-
-
 set(axes1,'TickLabelInterpreter','latex');
 fig = gcf;
 fig.PaperUnits = 'inches';
@@ -100,7 +96,7 @@ ax_width = outerpos(3) - ti(1) - ti(3);
 ax_height = outerpos(4) - ti(2) - ti(4);
 ax.Position = [left bottom ax_width ax_height];
 
-% print('viscos','-depsc')
+print('Data/intro-effectiveviscos','-depsc')
 % savefig('viscos.fig')
 end
 
@@ -139,7 +135,7 @@ ax.Position = [left bottom ax_width ax_height];
 fig = gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 5 5];
-% print(fig,'beta','-depsc')
+print(fig,'Data/results-math-beta','-depsc')
 % 
 % savefig('beta.fig')
 end
@@ -179,7 +175,7 @@ fig = gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 5 5];
 % 
-print(fig,'gamma','-depsc')
+print(fig,'Data/results-math-gamma','-depsc')
 % 
 % savefig('gamma.fig')
 end
@@ -222,6 +218,8 @@ ax_width = outerpos(3) - ti(1) - ti(3)-0.01;
 ax_height = outerpos(4) -ti(2) - ti(4)-0.01;
 
 ax.Position = [left bottom ax_width ax_height];
+print(fig,'Data/results-math-kappa','-depsc')
+
 end
 %%  Velocity stages plot
 % Note: figure must be docked into matlab to create dimensions.
@@ -246,30 +244,7 @@ text(vel(29,1)-10,vel(29,2),'Fig 4b: Rapid growth')
 text(vel(55,1)+0.002,vel(55,2)+0.002,'Fig 4c: Aggregate erosion')
 text(vel(116,1),vel(116,2)+0.002,'Fig 4d: Cell clearance by extravasation')
 ylim([-0.02,0.02])
-% xline(21,'Parent',axes1,'LineStyle','--');
-% xline(30,'Parent',axes1,'LineStyle','--');
-% xline(64,'Parent',axes1,'LineStyle','--');
 
-% % Create textbox
-% annotation(figure1,'textbox',...
-%     [0.603380598015553 0.892931174475809 0.170312500000001 0.037713139418255],...
-%     'String','Cell clearance by extravasation',...
-%     'Interpreter','latex',...
-%     'FontSize',14,...
-%     'FitBoxToText','off',...
-%     'EdgeColor',[1 1 1]);
-% 
-% % Create textbox
-% annotation(figure1,'textbox',...
-%     [0.108653090822922 0.885360660736789 0.131770833333333 0.037713139418255],...
-%     'String',{'Cell','Arrival',''},...
-%     'Interpreter','latex',...
-%     'FontSize',14,...
-%     'FitBoxToText','off',...
-%     'EdgeColor',[1 1 1]);
-% 
-
-% 
 % Create textbox
 annotation(figure1,'textbox',...
     [0.108653090822922 0.885360660736789 0.131770833333333 0.037713139418255],...
@@ -278,27 +253,6 @@ annotation(figure1,'textbox',...
     'FontSize',14,...
     'FitBoxToText','off',...
     'EdgeColor',[1 1 1]);
-% % Create textbox
-% annotation(figure1,'textbox',...
-%     [0.106167477574979 0.295781116242503 0.0510416666666664 0.0868605817452357],...
-%     'String','Rapid aggregate growth ',...
-%     'Interpreter','latex',...
-%     'FontSize',14,...
-%     'FitBoxToText','off',...
-%     'EdgeColor',[1 1 1]);
-% 
-% % Create arrow
-% annotation(figure1,'arrow',[0.177690029615005 0.207305034550839],...
-%     [0.322076923076923 0.382051282051282]);
-% 
-% % Create textbox
-% annotation(figure1,'textbox',...
-%     [0.241828642338523 0.348591562232485 0.12628134218289 0.037713139418255],...
-%     'String','Cell pulse ends and shear erosion dominates',...
-%     'Interpreter','latex',...
-%     'FontSize',14,...
-%     'FitBoxToText','off',...
-%     'EdgeColor',[1 1 1]);
 
 ylabel('Aggregate growth velocity $v_n/u^*$','Interpreter','latex');
 xlabel('Normalised delivery time $t/t^*$','Interpreter','latex');
@@ -306,6 +260,8 @@ xlabel('Normalised delivery time $t/t^*$','Interpreter','latex');
 axes1.TickLabelInterpreter = 'latex';
 set(axes1,'FontSize',14,'TickLabelInterpreter','latex');
 ax = gca;
+print(fig,'Data/results-math-growthvelocity','-depsc')
+
   end
 %%  H plot
 
@@ -345,6 +301,8 @@ ax.Position = [left bottom ax_width ax_height]
 fig = gcf;
 fig.PaperUnits = 'inches';
 fig.PaperPosition = [0 0 5 5];
+print(fig,'Data/results-math-RBC','-depsc')
+
 end
 
 
@@ -385,14 +343,14 @@ bottom = outerpos(2) + ti(2)+0.02;
 ax_width = outerpos(3) - ti(1) - ti(3)-0.05;
 ax_height = outerpos(4) -ti(2) - ti(4)-0.03;
 ax.Position = [left bottom ax_width ax_height]
-print(figure1,'ckappaheat','-depsc')
-savefig('ckappaheat.fig')
+print(figure1,'Data/results-math-const-extravasation-heat','-depsc')
+% savefig('ckappaheat.fig')
 end
 %% 2D plot comparion: exponential extravasation: HEAT 
 
 % close all
 for i=1
-const=importdata('Data/exponentialextravasation.txt');
+const=importdata('Data/expextravasation.txt');
 k1=find(const(:,1)==-20.0);
 Ls=abs(k1(1:end-1)-k1(2:end));
 ts=0:139;
@@ -423,15 +381,13 @@ outerpos = ax.OuterPosition;
 ti = ax.TightInset; 
 left = outerpos(1) + ti(1)+0.01;caxis([0 33])
 
-% zlim([-0.01,33])
-% caxis([0, 25])
 bottom = outerpos(2) + ti(2)+0.02;
 ax_width = outerpos(3) - ti(1) - ti(3)-0.05;
 ax_height = outerpos(4) -ti(2) - ti(4)-0.03;
 ax.Position = [left bottom ax_width ax_height]
-print(figure1,'ekappaheat','-depsc')
+print(figure1,'Data/results-math-exp-extravasation-heat','-depsc')
 
-savefig('ekappaheat.fig')
+%savefig('ekappaheat.fig')
 end
 %% Heat Maps 
 for i=1
@@ -470,7 +426,8 @@ hold(axes2,'on');
 [DT,IO,x,y,z]=extract(c2);
 
 % Create patch
-s=trisurf(DT(IO, :),x*d*100,y*d*100,z)
+s=trisurf(DT(IO, :),x*d*100,y*d*100,z) 
+
  s.EdgeColor='none'
  xlim([-1.5,0.5])
 ylim([-0.0825,0.0825])

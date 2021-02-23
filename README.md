@@ -1,5 +1,8 @@
 # Magnetic-Cell-Delivery-Simulations
-Supplementary material for paper: Experimental and mathematical modelling of magnetically labelled mesenchymal stromal cell delivery (2020) Author: E. Yeo, H. Markides, A.T. Schade, A.J. Studd, J.M. Oliver, S.L. Waters, A.J. El Haj
+Supplementary material for paper: Experimental and mathematical modelling of magnetically labelled mesenchymal stromal cell delivery (2021) Author: E. Yeo, H. Markides, A.T. Schade, A.J. Studd, J.M. Oliver, S.L. Waters, A.J. El Haj, Royal Society Interface
+
+Link to published article: https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0558
+
 Author of files in this repository: E. Yeo
 
 Contents:
